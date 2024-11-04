@@ -34,10 +34,15 @@ const deleteUser = catchAsync(async (req, res) => {
   res.status(httpStatus.NO_CONTENT).send();
 });
 
+const userThere = (req, res) => {
+  res.send({message: 'Hello There'});
+};
+
 module.exports = {
   createUser,
   getUsers,
   getUser,
   updateUser,
   deleteUser,
+  userThere
 };

@@ -1,0 +1,57 @@
+name: Testing
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main  # Change this to your main branch name if different
+
+jobs:
+    build:
+      runs-on: self-hosted
+      steps:
+      
+        - name: Checkout code
+          uses: git pull
+          working-directory: ./testing-github-actions
+
+
+        - name: Install dependencies
+          run: |
+            npm i
+          working-directory: ./testing-github-actions
+        
+        - name: environment variable
+          run: |
+            echo "PORT=3000" > .env
+
+            # MongoDB URL
+            echo "MONGODB_URL=mongodb+srv://haseebabid:H@seeb@testing.uilf7.mongodb.net/?retryWrites=true&w=majority&appName=Testing" >> .env
+
+            # JWT
+            echo "JWT_SECRET=thisisasamplesecret" >> .env
+            echo "JWT_ACCESS_EXPIRATION_MINUTES=30" >> .env
+            echo "JWT_REFRESH_EXPIRATION_DAYS=30" >> .env
+            echo "JWT_RESET_PASSWORD_EXPIRATION_MINUTES=10" >> .env
+            echo "JWT_VERIFY_EMAIL_EXPIRATION_MINUTES=10" >> .env
+
+            # SMTP Configuration
+            echo "SMTP_HOST=smtp.ethereal.email" >> .env
+            echo "SMTP_PORT=587" >> .env
+            echo "SMTP_USERNAME=terrence.grimes@ethereal.email" >> .env
+            echo "SMTP_PASSWORD=5vayky1vFEY6J5EjyU" >> .env
+            echo "EMAIL_FROM=terrence.grimes@ethereal.email" >> .env
+          working-directory: ./testing-github-actions
+
+
+            
+            
+        - name: start
+          run: |
+            npm start
+          working-directory: ./testing-github-actions
+
+            
+
+    
+      
