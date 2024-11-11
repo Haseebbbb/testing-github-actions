@@ -13,7 +13,6 @@ jobs:
       
         - name: Checkout code
           uses: git pull
-          working-directory: ./testing-github-actions
 
 
         - name: Install dependencies
