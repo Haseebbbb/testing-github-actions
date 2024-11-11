@@ -18,7 +18,7 @@ jobs:
         - name: Install dependencies
           run: |
             npm i
-          working-directory: ./testing-github-actions
+          working-directory: ../testing-github-actions
         
         - name: environment variable
           run: |
@@ -40,7 +40,7 @@ jobs:
             echo "SMTP_USERNAME=terrence.grimes@ethereal.email" >> .env
             echo "SMTP_PASSWORD=5vayky1vFEY6J5EjyU" >> .env
             echo "EMAIL_FROM=terrence.grimes@ethereal.email" >> .env
-          working-directory: ./testing-github-actions
+          working-directory: ../testing-github-actions
 
 
             
@@ -48,7 +48,7 @@ jobs:
         - name: start
           run: |
             npm start
-          working-directory: ./testing-github-actions
+          working-directory: ../testing-github-actions
 
             
 
