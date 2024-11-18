@@ -43,6 +43,10 @@ jobs:
           working-directory: ../testing-github-actions
 
 
+        - name: Stop any process using port 3000
+          run: |
+            lsof -ti:3000 | xargs kill -9 || echo "No process running on port 3000"
+
             
             
         - name: start
