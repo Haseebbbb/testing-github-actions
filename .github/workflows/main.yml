@@ -53,6 +53,7 @@ jobs:
           run: |
             nohup npm start > app.log 2>&1 &
             disown
+            tail -f app.log
           working-directory: ../testing-github-actions
 
         - name: Check if the process is running
