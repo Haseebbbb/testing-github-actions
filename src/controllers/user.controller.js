@@ -35,7 +35,7 @@ const deleteUser = catchAsync(async (req, res) => {
 });
 
 const userThere = (req, res) => {
-  res.send({message: 'Hello There'});
+  res.send({message: 'Hi'});
 };
 
 module.exports = {
