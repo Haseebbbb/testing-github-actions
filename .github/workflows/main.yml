@@ -47,7 +47,7 @@ jobs:
             
         - name: start
           run: |
-            npm start
+            npm start &
           working-directory: ../testing-github-actions
 
             
