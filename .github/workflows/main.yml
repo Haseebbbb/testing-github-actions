@@ -55,6 +55,13 @@ jobs:
             disown
           working-directory: ../testing-github-actions
 
+        - name: Check if the process is running
+          run: |
+            ps aux | grep 'npm start'
+          working-directory: ../testing-github-actions
+
+
+
             
 
     
