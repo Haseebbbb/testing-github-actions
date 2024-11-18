@@ -52,6 +52,7 @@ jobs:
         - name: start
           run: |
             nohup npm start > app.log 2>&1 &
+            disown
           working-directory: ../testing-github-actions
 
             
