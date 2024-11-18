@@ -52,7 +52,6 @@ jobs:
         - name: start
           run: |
             nohup pm2 start npm --name "my-app" -- start
-            disown
           working-directory: ../testing-github-actions
 
         - name: Check if the process is running
